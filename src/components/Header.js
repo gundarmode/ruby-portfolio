@@ -1,48 +1,45 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 
 const Header = ({windowWidth, windowHeight}) => {
 
-    const [header, setHeader] = useState(false)
-    const [title, setTitle] = useState(false);
-    const [subTitle, setSubTitle] = useState(false);
+	const headerRef = useRef(null)
+	const titleRef = useRef(null)
+	const subTitleRef = useRef(null)
+	const coolTextRef = useRef(null)
+	const header1Ref = useRef(null)
+	const header2Ref = useRef(null)
+	const header3Ref = useRef(null)
+	
+	const timer = (el, time) => {
+		setTimeout(() => {el.current.classList.add("active")}, time);
+	}
+ 
+	useEffect(() => {
+		timer(coolTextRef, 500)	
+	   	timer(headerRef, 750)
+		timer(header1Ref, 1000)
+		timer(header2Ref, 1250)
+		timer(header3Ref, 1500)
+		timer(titleRef, 1750)
+		timer(subTitleRef, 2000)    
+	},[])
 
-    const [coolText, setCoolText] = useState(false)
+	return (
+		<header ref={headerRef} style={{width:`${windowWidth}px`, height:`${windowHeight}px`}}>
+			<div className="header-elements">
+				<div className="header-element element-1" ref={header1Ref}></div>
+				<div className="header-element element-2" ref={header2Ref}></div>
+				<div className="header-element element-3" ref={header3Ref}></div>
+			</div>
+			<div className="intro-box slide" ref={titleRef}>
+				<h1>Rubyann Yau</h1>
+				<div className="sub-title" ref={subTitleRef}>Graphic Designer</div>
+			</div>
+			<div className="cool-text" ref={coolTextRef}>Rubyann Yau</div>
 
-    const[header1, setHeader1] = useState(false)
-    const[header2, setHeader2] = useState(false)
-    const[header3, setHeader3] = useState(false)
-   
-    useEffect(() => {
-        setTimeout(() => {setCoolText(true)}, 500);
-        setTimeout(() => {setHeader(true)}, 750);
-
-        setTimeout(() => {setHeader1(true)}, 1000);
-        setTimeout(() => {setHeader2(true)}, 1250);
-        setTimeout(() => {setHeader3(true)}, 1500);
-    
-        setTimeout(() => {setTitle(true)}, 1750);
-        setTimeout(() => {setSubTitle(true)}, 2000);      
-    },[])
-
-    return (
-        <header 
-            className={`fade-in${header ? " active" : ""}`}
-            style={{width:`${windowWidth}px`, height:`${windowHeight}px`}}
-        >
-            <div className="header-elements">
-                <div className={`header-element element-1${header1 ? " active" : ""}`}></div>
-                <div className={`header-element element-2${header2 ? " active" : ""}`}></div>
-                <div className={`header-element element-3${header3 ? " active" : ""}`}></div>
-            </div>
-            <div className={`intro-box slide${title ? " active" : ""}`}>
-                <h1>Rubyann Yau</h1>
-                <div className={`sub-title slide${subTitle ? " active" : ""}`}>Graphic Designer</div>
-            </div>
-            <div className={`cool-text${coolText ? " active" : ""}`}>Rubyann Yau</div>
-
-            <button className='btn'>Start</button>
-        </header>
-    )
+			<button className='btn'>Start</button>
+		</header>
+	)
 }
 
 export default Header
