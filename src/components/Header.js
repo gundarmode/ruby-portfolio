@@ -1,4 +1,5 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useEffect, useRef} from 'react'
+import { StyledHeader } from './styles/Header.styled'
 
 const Header = ({windowWidth, windowHeight}) => {
 
@@ -25,20 +26,20 @@ const Header = ({windowWidth, windowHeight}) => {
 	},[])
 
 	return (
-		<header ref={headerRef} style={{width:`${windowWidth}px`, height:`${windowHeight}px`}}>
-			<div className="header-elements">
-				<div className="header-element element-1" ref={header1Ref}></div>
-				<div className="header-element element-2" ref={header2Ref}></div>
-				<div className="header-element element-3" ref={header3Ref}></div>
-			</div>
-			<div className="intro-box slide" ref={titleRef}>
-				<h1>Rubyann Yau</h1>
-				<div className="sub-title" ref={subTitleRef}>Graphic Designer</div>
-			</div>
-			<div className="cool-text" ref={coolTextRef}>Rubyann Yau</div>
+        <StyledHeader ref={headerRef} style={{width:`${windowWidth}px`, height:`${windowHeight}px`}}>
+            <div className="header-elements">
+                <div className="header-element element-1" ref={header1Ref}></div>
+                <div className="header-element element-2" ref={header2Ref}></div>
+                <div className="header-element element-3" ref={header3Ref}></div>
+            </div>
+            <div className="intro-box slide" ref={titleRef}>
+                <h1>Rubyann Yau</h1>
+                <div className="sub-title" ref={subTitleRef}>Graphic Designer</div>
+            </div>
+            <div className="cool-text" ref={coolTextRef}>Rubyann Yau</div>
 
-			<button className='btn'>Start</button>
-		</header>
+            <button className='btn'>Start</button>     
+        </StyledHeader>
 	)
 }
 

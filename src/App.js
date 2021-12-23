@@ -1,8 +1,8 @@
 
 import {useState, useEffect} from "react";
-import './App.css';
 import Header from './components/Header';
 import SectionOne from "./components/SectionOne";
+import { GlobalStyles } from "./components/styles/Globals";
 
 function App() {
 
@@ -25,6 +25,7 @@ function App() {
 	
 	return (
         <>
+            <GlobalStyles />
             <Header windowWidth={size.windowWidth} windowHeight={size.windowHeight} />
 		    <SectionOne />
         </>
