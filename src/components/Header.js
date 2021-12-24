@@ -30,11 +30,11 @@ const Header = ({windowWidth, windowHeight}) => {
 		timer(subTitleRef, 2000) 
         timer(btnRef, 2500)
         
-        setTimeout(() => {
-            setInterval(() => {
-                extraBG.current.classList.toggle("bg-transition")
-            }, 4000);
-        }, 2500);
+        // setTimeout(() => {
+        //     setInterval(() => {
+        //         extraBG.current.classList.toggle("bg-transition")
+        //     }, 4000);
+        // }, 2500);
         
 	},[])
 

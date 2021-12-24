@@ -38,6 +38,17 @@ p {margin-bottom:30px; line-height:30px;}
     display:flex; width:100%
 }
 
+ul{
+    margin-bottom:30px;
+    li {
+        margin-bottom:20px;
+        list-style:none;
+        &:before {
+            content:"■"; width:10px;height:10px;display:inline-block; margin-right:10px;
+        }
+    }
+}
+
 .btn {
     font-weight:700; display:inline-block;z-index:1; font-size:24px; border-radius:25px; padding:10px 25px; border:1px solid #fff; background:none; color:#fff; text-transform:uppercase; cursor: pointer; transition:all ease .2s;
     @media (max-width:${MediaQueries.xLargeDevices}) {

@@ -4,15 +4,20 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
 import Header from './components/Header';
 import SectionOne from "./pages/SectionOne";
+import SectionTwo from "./pages/SectionTwo";
 import { GlobalStyles } from "./components/styles/Globals";
+import Navigation from "./components/Navigation";
 
 function App() {
 
+ 
 	// Get window width and height
 	const [size, setSize] = useState({
 		windowWidth: window.innerWidth,
 		windowHeight: window.innerHeight
 	})
+
+  
 
 	const updateSize = () => {
 		setSize({
@@ -20,7 +25,8 @@ function App() {
 			windowHeight: window.innerHeight
 		})
 	}
-	
+
+ 
 	useEffect(() => {
 		window.onresize = updateSize
 	}, [])
@@ -28,10 +34,12 @@ function App() {
 	return (
 		<Router>
 			<>
-				<GlobalStyles />		
+				<GlobalStyles />	
+                <Navigation/>	
 				<Routes>
 					<Route path="/" element={<Header windowWidth={size.windowWidth} windowHeight={size.windowHeight} />} />
 					<Route path="/section-one" element={<SectionOne />} />
+                    <Route path="/section-two" element={<SectionTwo />} />
 				</Routes>
 			</>
 		</Router>

@@ -1,38 +1,25 @@
 import React, {} from 'react'
 import {motion} from "framer-motion"
 import { StyledSection } from '../components/styles/Section.styled'
-// import axios from 'axios';
+
 
 import img1 from "../components/assets/images/work/1/one.jpg"
 import img2 from "../components/assets/images/work/1/2.jpg"
 import img3 from "../components/assets/images/work/1/3.jpg"
 import img4 from "../components/assets/images/work/1/4.jpg"
 
-const SectionOne = () => {
-    // let exeternalData = "https://dl.dropboxusercontent.com/s/9irycp74oiftgrc/sectionOne.json?dl=0"
+import bg from "../components/assets/images/work/2/bg.jpg"
 
-    // const[data,setData] = useState([{}])
-
-    // useEffect(() => {
-    //     axios.get(exeternalData, {
-    //         // headers:{
-    //         //     "Content-Type": "text/plain; charset=dropbox-cors-hack"
-    //         // }
-    //     })
-    //     .then(res => {
-    //         const persons = res.data;
-    //         setData(persons)
-           
-    //     });
-
-    // },[])
-
+const SectionTwo = () => {
+   
  
 	return (
 		<motion.section
+            className="alt"
             initial={{opacity:0}}
 		    animate={{opacity:1}}
 		    transition={{duration:1}}
+            style={{backgroundImage:`url(${bg})`, color:"#fff"}}
         >
             <StyledSection>
                 <div className='row'>
@@ -116,4 +103,4 @@ const SectionOne = () => {
 	)
 }
 
-export default SectionOne
+export default SectionTwo
