@@ -1,7 +1,10 @@
 import React, {useEffect, useRef} from 'react'
+import {useNavigate} from "react-router-dom"
 import { StyledHeader } from './styles/Header.styled'
 
 const Header = ({windowWidth, windowHeight}) => {
+
+    let navigate = useNavigate();
 
 	const headerRef = useRef(null)
 	const titleRef = useRef(null)
@@ -10,6 +13,8 @@ const Header = ({windowWidth, windowHeight}) => {
 	const header1Ref = useRef(null)
 	const header2Ref = useRef(null)
 	const header3Ref = useRef(null)
+    const btnRef = useRef(null)
+    const extraBG = useRef(null)
 	
 	const timer = (el, time) => {
 		setTimeout(() => {el.current.classList.add("active")}, time);
@@ -22,11 +27,20 @@ const Header = ({windowWidth, windowHeight}) => {
 		timer(header2Ref, 1250)
 		timer(header3Ref, 1500)
 		timer(titleRef, 1750)
-		timer(subTitleRef, 2000)    
+		timer(subTitleRef, 2000) 
+        timer(btnRef, 2500)
+        
+        setTimeout(() => {
+            setInterval(() => {
+                extraBG.current.classList.toggle("bg-transition")
+            }, 4000);
+        }, 2500);
+        
 	},[])
 
 	return (
         <StyledHeader ref={headerRef} style={{width:`${windowWidth}px`, height:`${windowHeight}px`}}>
+            <div className='extra-bg' ref={extraBG}></div>
             <div className="header-elements">
                 <div className="header-element element-1" ref={header1Ref}></div>
                 <div className="header-element element-2" ref={header2Ref}></div>
@@ -38,7 +52,7 @@ const Header = ({windowWidth, windowHeight}) => {
             </div>
             <div className="cool-text" ref={coolTextRef}>Rubyann Yau</div>
 
-            <button className='btn'>Start</button>     
+            <button className='btn' ref={btnRef} onClick={() => {navigate("/section-one")}}>View Portfolio</button>     
         </StyledHeader>
 	)
 }

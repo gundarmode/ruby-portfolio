@@ -1,4 +1,3 @@
-
 export const MediaQueries = {
     smallDevices:"575.98px",
     mediumDevices:"767.98px",

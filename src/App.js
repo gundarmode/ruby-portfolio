@@ -1,7 +1,9 @@
 
 import {useState, useEffect} from "react";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+
 import Header from './components/Header';
-import SectionOne from "./components/SectionOne";
+import SectionOne from "./pages/SectionOne";
 import { GlobalStyles } from "./components/styles/Globals";
 
 function App() {
@@ -24,13 +26,15 @@ function App() {
 	}, [])
 	
 	return (
-        <>
-            <GlobalStyles />
-            <Header windowWidth={size.windowWidth} windowHeight={size.windowHeight} />
-		    <SectionOne />
-        </>
-		
-		
+		<Router>
+			<>
+				<GlobalStyles />		
+				<Routes>
+					<Route path="/" element={<Header windowWidth={size.windowWidth} windowHeight={size.windowHeight} />} />
+					<Route path="/section-one" element={<SectionOne />} />
+				</Routes>
+			</>
+		</Router>
 	);
 }
 
