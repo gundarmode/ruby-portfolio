@@ -39,24 +39,58 @@ const SectionOne = () => {
                     <div className='col-half'>
                         <div className="img-box-main">
                             <div className="column left">
-                                <div className='img-box'><img src={img1} alt="work 1" /></div>
-                                <div className='img-box'><img src={img2} alt="work 2" /></div>
+                                <motion.div 
+                                    className='img-box'
+                                    initial={{opacity:0, translateY:50}}
+                                    animate={{opacity:1, translateY:0}}
+                                    transition={{duration:1}}    
+                                >
+                                    <img src={img1} alt="work 1" />
+                                </motion.div>
+                                <motion.div 
+                                    className='img-box'
+                                    initial={{opacity:0, translateY:50}}
+                                    animate={{opacity:1, translateY:0}}
+                                    transition={{duration:1, delay:.5}} 
+                                >
+                                    <img src={img2} alt="work 2" />
+                                </motion.div>
                             </div>
                             <div className="column right">
-                                <div className='img-box'><img src={img3} alt="work 3" /></div>    
+                                <motion.div 
+                                    className='img-box'
+                                    initial={{opacity:0, translateY:50}}
+                                    animate={{opacity:1, translateY:0}}
+                                    transition={{duration:1, delay:.750}}
+                                >
+                                    <img src={img3} alt="work 3" />
+                                </motion.div>
+                
                             </div>
                         </div>
                         <div className="img-box-bottom">
-                        <div className='img-box'><img src={img4} alt="work 4" /></div> 
+                                <motion.div 
+                                    className='img-box'
+                                    initial={{opacity:0, translateY:50}}
+                                    animate={{opacity:1, translateY:0}}
+                                    transition={{duration:1, delay:1}}
+                                >
+                                    <img src={img4} alt="work 4" />
+                                </motion.div>
                         </div>
                     </div>
-                    <div className='col-half'>  
+                    <motion.div 
+                        className='col-half'
+                        initial={{opacity:0, translateY:50}}
+                        animate={{opacity:1, translateY:0}}
+                        transition={{duration:1, delay:1.250}}
+                    >
                         <h1>Heading 1</h1>
                         <h2>Heading 2</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-                    </div>
+                    </motion.div>
                 </div>
             </StyledSection>
         </motion.section>
