@@ -8,6 +8,8 @@ import img2 from "../components/assets/images/work/1/2.jpg"
 import img3 from "../components/assets/images/work/1/3.jpg"
 import img4 from "../components/assets/images/work/1/4.jpg"
 
+import bg from "../components/assets/images/work/1/bg.png"
+
 const SectionOne = () => {
     // let exeternalData = "https://dl.dropboxusercontent.com/s/9irycp74oiftgrc/sectionOne.json?dl=0"
 
@@ -33,10 +35,11 @@ const SectionOne = () => {
             initial={{opacity:0}}
 		    animate={{opacity:1}}
 		    transition={{duration:1}}
+            style={{backgroundImage:`url(${bg})`}}
         >
             <StyledSection>
                 <div className='row'>
-                    <div className='col-half'>
+                    <div className='col-half images'>
                         <div className="img-box-main">
                             <div className="column left">
                                 <motion.div 

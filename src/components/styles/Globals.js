@@ -33,6 +33,9 @@ p {margin-bottom:30px; line-height:30px;}
 .col-half {
     width:50%;
     padding:10%;
+    @media (max-width:${MediaQueries.xLargeDevices}) {
+        padding:5%;
+    }
 }
 .row {
     display:flex; width:100%
@@ -47,6 +50,10 @@ ul{
             content:"■"; width:10px;height:10px;display:inline-block; margin-right:10px;
         }
     }
+}
+
+section{
+    background-size:contain; background-position:right bottom; background-repeat: no-repeat;
 }
 
 .btn {

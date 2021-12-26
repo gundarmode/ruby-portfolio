@@ -12,7 +12,7 @@ import headerImg3Small from "../assets/images/header/elem-3-small.png"
 
 export const StyledHeader = styled.header`
     position:relative;display:flex;width:1920px;height:700px;background:rgb(116,116,116);background: linear-gradient(90deg, rgba(116,116,116,1) 0%, rgba(235,235,235,1) 100%);background-size:cover;margin:auto;justify-content:center;align-items:center;text-align:center;overflow:hidden; flex-direction: column;
-    &:before {position: absolute; content: "";top: 0; right: 0; bottom: 0;left: 0;background: rgb(32,35,112);background: linear-gradient(90deg, rgba(32,35,112,1) 0%, rgba(236,0,140,1) 100%); opacity: 0; transition: all ease .6s;
+    &:before {position: absolute; content: "";top: 0; right: 0; bottom: 0;left: 0;background: rgb(32,35,112);background: linear-gradient(90deg, rgba(0,192,243,1) 0%, rgba(236,0,140,1) 100%); opacity: 0; transition: all ease .6s;
     }
     &.active {
         &:before {opacity:1; visibility:visible;transition:all ease .6s;
@@ -21,7 +21,7 @@ export const StyledHeader = styled.header`
 	.extra-bg {
 		width:100%;height:100%; position:absolute;
 		&:before {
-			position: absolute; content: "";top: 0; right: 0; bottom: 0;left: 0;background: rgb(32,35,112);background: linear-gradient(-90deg, rgba(32,35,112,1) 0%, rgba(236,0,140,1) 100%); opacity: 0; transition: all ease 4s;
+			position: absolute; content: "";top: 0; right: 0; bottom: 0;left: 0;background: rgb(32,35,112);background: linear-gradient(-90deg, rgba(0,192,243,1) 0%, rgba(236,0,140,1) 100%); opacity: 0; transition: all ease 4s;
 		}
 		&.bg-transition {
 			&:before {

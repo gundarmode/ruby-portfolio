@@ -8,7 +8,7 @@ import img2 from "../components/assets/images/work/1/2.jpg"
 import img3 from "../components/assets/images/work/1/3.jpg"
 import img4 from "../components/assets/images/work/1/4.jpg"
 
-import bg from "../components/assets/images/work/2/bg.jpg"
+import bg from "../components/assets/images/work/2/bg.png"
 
 const SectionTwo = () => {
    
@@ -19,11 +19,11 @@ const SectionTwo = () => {
             initial={{opacity:0}}
 		    animate={{opacity:1}}
 		    transition={{duration:1}}
-            style={{backgroundImage:`url(${bg})`, color:"#fff"}}
+            style={{backgroundImage:`url(${bg}), linear-gradient(90deg, rgba(0,192,243,1) 0%, rgba(236,0,140,1) 100%)`, color:"#fff", }}
         >
             <StyledSection>
                 <div className='row'>
-                    <div className='col-half'>
+                    <div className='col-half images'>
                         <div className="img-box-main">
                             <div className="column left">
                                 <motion.div 

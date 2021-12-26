@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {useLocation, useNavigate } from "react-router-dom"
+import { NavStyled } from './styles/Nav.styled';
 
 const Navigation = () => {
 
@@ -12,18 +13,24 @@ const Navigation = () => {
 	let navigate = useNavigate();
 
 	const prevButton = () => {
-        if (count > 1 ) {
+        if (count === 1 ) {
+			setCount(pageTotal)
+			checkCounter(pageTotal)
+		} else{
 			setCount(count - 1)
 			checkCounter(count - 1)
 		}
         
     }
-
     const nextButton = () => {
-		if (count < pageTotal ) {
+		if (count === pageTotal) {
+			setCount(1)
+			checkCounter(1)
+		}else {
 			setCount(count + 1)
 			checkCounter(count + 1)
 		}
+		
     }
 
 	const checkCounter = (count) => {
@@ -52,11 +59,14 @@ const Navigation = () => {
 	
 			<>
 				{display && (
-					<div>
-						<button onClick={()=>{prevButton()}}>Previous Work: {count}</button>
-						<button onClick={()=>{nextButton()}}>Next Work: {nextCount}</button>
+					<NavStyled>
+						<div className='side-buttons'>
+							<button onClick={()=>{prevButton()}}>Previous Work: {count}</button>
+							<button onClick={()=>{nextButton()}}>Next Work: {nextCount}</button>
+						</div>
+						
 
-					</div>
+					</NavStyled>
 				)}
 			</>
 		
