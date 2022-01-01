@@ -62,7 +62,7 @@ const Navigation = ({navAnimation, setNavAnimation, windowWidth, windowHeight}) 
 	// }
 
 	useEffect(() => {
-		setDisplay(location !== "/ruby-portfolio" ? true : false)
+		setDisplay(location !== "/ruby-portfolio/" ? true : false)
 		switch (location) {
 			// case "/" : 
 			// setNavAnimation(false)
