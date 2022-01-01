@@ -11,6 +11,8 @@ import Navigation from "./components/Navigation";
 function App() {
 
  
+    const[navAnimation,setNavAnimation] = useState(true)
+
 	// Get window width and height
 	const [size, setSize] = useState({
 		windowWidth: window.innerWidth,
@@ -35,7 +37,7 @@ function App() {
 		<Router>
 			<>
 				<GlobalStyles />	
-                <Navigation/>	
+                <Navigation navAnimation={navAnimation} setNavAnimation={setNavAnimation} windowWidth={size.windowWidth} windowHeight={size.windowHeight}/>	
 				<Routes>
 					<Route path="/" element={<Header windowWidth={size.windowWidth} windowHeight={size.windowHeight} />} />
 					<Route path="/section-one" element={<SectionOne />} />

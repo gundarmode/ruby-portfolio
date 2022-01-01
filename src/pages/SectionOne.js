@@ -32,10 +32,10 @@ const SectionOne = () => {
  
 	return (
 		<motion.section
-            initial={{opacity:0}}
-		    animate={{opacity:1}}
-		    transition={{duration:1}}
-            style={{backgroundImage:`url(${bg})`}}
+            // initial={{opacity:1}}
+		    // animate={{opacity:1}}
+		    // transition={{duration:1}}
+            style={{backgroundImage:`url(${bg}), linear-gradient(90deg, rgba(0,192,243,1) 0%, rgba(236,0,140,1) 100%)`, color:"#fff", }}
         >
             <StyledSection>
                 <div className='row'>

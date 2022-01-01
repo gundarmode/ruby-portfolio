@@ -3,10 +3,9 @@ import {motion} from "framer-motion"
 import { StyledSection } from '../components/styles/Section.styled'
 
 
-import img1 from "../components/assets/images/work/1/one.jpg"
-import img2 from "../components/assets/images/work/1/2.jpg"
-import img3 from "../components/assets/images/work/1/3.jpg"
-import img4 from "../components/assets/images/work/1/4.jpg"
+import img1 from "../components/assets/images/work/2/1.jpg"
+import img3 from "../components/assets/images/work/2/2.jpg"
+import img4 from "../components/assets/images/work/2/3.jpg"
 
 import bg from "../components/assets/images/work/2/bg.png"
 
@@ -16,9 +15,9 @@ const SectionTwo = () => {
 	return (
 		<motion.section
             className="alt"
-            initial={{opacity:0}}
-		    animate={{opacity:1}}
-		    transition={{duration:1}}
+            // initial={{opacity:0}}
+		    // animate={{opacity:1}}
+		    // transition={{duration:1}}
             style={{backgroundImage:`url(${bg}), linear-gradient(90deg, rgba(0,192,243,1) 0%, rgba(236,0,140,1) 100%)`, color:"#fff", }}
         >
             <StyledSection>
@@ -33,14 +32,6 @@ const SectionTwo = () => {
                                     transition={{duration:1, delay:.25}}    
                                 >
                                     <img src={img1} alt="work 1" />
-                                </motion.div>
-                                <motion.div 
-                                    className='img-box'
-                                    initial={{opacity:0, translateY:50}}
-                                    animate={{opacity:1, translateY:0}}
-                                    transition={{duration:1, delay:.5}} 
-                                >
-                                    <img src={img2} alt="work 2" />
                                 </motion.div>
                             </div>
                             <div className="column right">

@@ -4,7 +4,7 @@ import { MediaQueries } from "./MediaQueries";
 export const GlobalStyles = createGlobalStyle `
 html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, strong, ul, li, form, br {margin: 0; padding: 0; border: 0; font-size: 100%; vertical-align: top;}
 html {background: #fff; height: 100%;}
-body {background:#fff; position: relative; color: #000; font-family: "Montserrat", sans-serif; -webkit-text-size-adjust: none; transition: transform ease .4s;}
+body {background:#fff; position: relative; color: #000; font-family: "Montserrat", sans-serif; -webkit-text-size-adjust: none; transition: transform ease .4s; overflow-x:hidden;}
 sup {padding: 0; margin: 0; font-size: 90%; line-height: normal;}
 a {text-decoration: none; color: #003fb8;text-decoration:underline;}
 a:hover {color: #0e91f5; }
@@ -20,6 +20,11 @@ h1{font-size:60px;line-height:60px; margin-bottom:40px; }
 h1:after {content:""; width:200px; height:2px; display:block; background: rgb(32,35,112);background: linear-gradient(90deg, rgba(32,35,112,1) 0%, rgba(236,0,140,1) 100%); margin-top:30px;}
 
 h2 {font-size:30px;line-height:30px; margin-bottom:30px;}
+
+@media (max-width:${MediaQueries.mediumDevices}) {
+    h1 {font-size:30px;}
+    h2 {font-size:24px;}
+}
 
 p {margin-bottom:30px; line-height:30px;}
 
