@@ -29,7 +29,7 @@ const Navigation = ({navAnimation, setNavAnimation, windowWidth, windowHeight, d
 		<NavStyled>
 			<div className={`main-nav${navAnimation ? " active" : ""}`}>
 				
-				<div className='logo'><img src={display ? logo : logo2} alt="Logo" /></div>
+				<Link href="/"><div className='logo'><img src={display ? logo : logo2} alt="Logo" /></div></Link>
 				<button className={`nav-button${navButton ? " active" : ""}${display ? " alt" : ""}`} onClick={() => {setNavButton(!navButton)}}></button>
 				<nav className={`nav${navButton ? " active" : ""}`} style={{width:`${windowWidth}px`, minHeight:`${windowHeight}px`}}>
 					<div className='menu-title'>Menu</div>
@@ -41,10 +41,6 @@ const Navigation = ({navAnimation, setNavAnimation, windowWidth, windowHeight, d
 			</div>
 			{display && (
 			<div>
-				{/* <div className='side-buttons'>
-					<button onClick={()=>{prevButton()}}>Prev</button>
-					<button onClick={()=>{nextButton()}}>Next</button>
-				</div> */}
 				<div className='bottom-nav'>
 					{
 						images.map((item, index) => {

@@ -3,9 +3,6 @@ import {motion} from "framer-motion"
 import { StyledSection } from './../styles/Section.styled'
 // import axios from 'axios';
 
-
-
-
 const SectionOne = () => {
 
 	return (
