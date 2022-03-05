@@ -39,7 +39,7 @@ function App() {
 				<GlobalStyles />	
                 <Navigation navAnimation={navAnimation} setNavAnimation={setNavAnimation} windowWidth={size.windowWidth} windowHeight={size.windowHeight}/>	
 				<Routes>
-					<Route path="/ruby-portfolio/" element={<Header windowWidth={size.windowWidth} windowHeight={size.windowHeight} />} />
+					<Route path="/" element={<Header windowWidth={size.windowWidth} windowHeight={size.windowHeight} />} />
 					<Route path="/section-one" element={<SectionOne />} />
                     <Route path="/section-two" element={<SectionTwo />} />
 				</Routes>

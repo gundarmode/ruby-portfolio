@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react'
-import {useLocation, useNavigate } from "react-router-dom"
 import { NavStyled } from './styles/Nav.styled';
 import {motion} from "framer-motion"
 
-import img1 from "../components/assets/images/work/thumbs/1.jpg"
-import img2 from "../components/assets/images/work/thumbs/2.jpg"
+import logo from "../components/assets/images/layout/logo.svg"
+import logo2 from "../components/assets/images/layout/logo-white.svg"
+import img1 from "../components/assets/images/work/thumbs/2.jpg"
+import img2 from "../components/assets/images/work/thumbs/1.jpg"
 
 const images = [
 	{
@@ -21,14 +22,12 @@ const images = [
 
 const Navigation = ({navAnimation, setNavAnimation, windowWidth, windowHeight}) => {
 
-	const location = useLocation().pathname;;
 	const [thumbs, setThumbs] = useState(images)
 	const [display, setDisplay] = useState(null);
 	const [count, setCount] = useState(1)
 	const[navButton, setNavButton] = useState(false)
 	// let nextCount = count + 1
 	let pageTotal = 2;
-	let navigate = useNavigate();
 
 	// const prevButton = () => {
 	// 	if (count === 1 ) {
@@ -61,36 +60,37 @@ const Navigation = ({navAnimation, setNavAnimation, windowWidth, windowHeight}) 
 	// 	}
 	// }
 
-	useEffect(() => {
-		setDisplay(location !== "/ruby-portfolio/" ? true : false)
-		switch (location) {
-			// case "/" : 
-			// setNavAnimation(false)
-			// break;
-			case "/section-one": 
-				setCount(1)
-				setNavAnimation(false)
-			break;
-			case "/section-two":
-				setCount(2)
-				setNavAnimation(false)
-			break;
-			default:
-			break;
-		}
-	}, [location, setNavAnimation])
+	// useEffect(() => {
+	// 	setDisplay(location !== "/" ? true : false)
+	// 	switch (location) {
+	// 		// case "/" : 
+	// 		// setNavAnimation(false)
+	// 		// break;
+	// 		case "/section-one": 
+	// 			setCount(1)
+	// 			setNavAnimation(false)
+	// 		break;
+	// 		case "/section-two":
+	// 			setCount(2)
+	// 			setNavAnimation(false)
+	// 		break;
+	// 		default:
+	// 		break;
+	// 	}
+	// }, [location, setNavAnimation])
 
 	return (
 				
 		<NavStyled>
 			<div className={`main-nav${navAnimation ? " active" : ""}`}>
-				<div className='logo'>Rubyann Yau</div>
-				<button className={`nav-button${navButton ? " active" : ""}`} onClick={() => {setNavButton(!navButton)}}></button>
+                
+				<div className='logo'><img src={display ? logo : logo2} alt="Logo" /></div>
+				<button className={`nav-button${navButton ? " active" : ""}${display ? " alt" : ""}`} onClick={() => {setNavButton(!navButton)}}></button>
 				<nav className={`nav${navButton ? " active" : ""}`} style={{width:`${windowWidth}px`, minHeight:`${windowHeight}px`}}>
                     <div className='menu-title'>Menu</div>
 					<ul>
-						<li><button onClick={()=> {navigate("/section-one"); setNavButton(false)}}>Section One</button></li>
-                        <li><button onClick={()=> {navigate("/section-two"); setNavButton(false)}}>Section Two</button></li>
+						<li><button>Section One</button></li>
+                        <li><button>Section Two</button></li>
 					</ul>
 				</nav>
 			</div>
@@ -109,7 +109,7 @@ const Navigation = ({navAnimation, setNavAnimation, windowWidth, windowHeight}) 
 									
                                     <motion.div 
                                             className='box'
-                                            onClick={()=>{navigate(linkPath)}}
+                                            onClick={()=>{""}}
                                             initial={{opacity:0, translateY:25}}
                                             animate={{opacity:1, translateY:0}}
                                             transition={{duration:1, delay:transitionTiming}}  

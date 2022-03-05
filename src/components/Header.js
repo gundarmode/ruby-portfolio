@@ -1,5 +1,4 @@
 import React, {useEffect, useRef} from 'react'
-import {useNavigate} from "react-router-dom"
 import { StyledHeader } from './styles/Header.styled'
 
 const Header = ({windowWidth, windowHeight}) => {
@@ -52,7 +51,7 @@ const Header = ({windowWidth, windowHeight}) => {
             </div>
             <div className="cool-text" ref={coolTextRef}>Rubyann Yau</div>
 
-            <button className='btn' ref={btnRef} onClick={() => {navigate("/section-one")}}>View Portfolio</button>     
+            <button className='btn'>View Portfolio</button>     
         </StyledHeader>
 	)
 }
