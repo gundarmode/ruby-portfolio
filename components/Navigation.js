@@ -21,29 +21,21 @@ const images = [
 	}	
 ]
 
-const Navigation = ({navAnimation, setNavAnimation, windowWidth, windowHeight}) => {
-
-	const [thumbs, setThumbs] = useState(images)
-	const [display, setDisplay] = useState(null);
-	const [count, setCount] = useState(1)
+const Navigation = ({navAnimation, setNavAnimation, windowWidth, windowHeight, display}) => {
 	const[navButton, setNavButton] = useState(false)
-	let pageTotal = 2;
-
-
-	
 
 	return (
 				
 		<NavStyled>
 			<div className={`main-nav${navAnimation ? " active" : ""}`}>
-                
+				
 				<div className='logo'><img src={display ? logo : logo2} alt="Logo" /></div>
 				<button className={`nav-button${navButton ? " active" : ""}${display ? " alt" : ""}`} onClick={() => {setNavButton(!navButton)}}></button>
 				<nav className={`nav${navButton ? " active" : ""}`} style={{width:`${windowWidth}px`, minHeight:`${windowHeight}px`}}>
-                    <div className='menu-title'>Menu</div>
+					<div className='menu-title'>Menu</div>
 					<ul>
 						<li><button><Link href="/section-one">Section One</Link></button></li>
-                        <li><button>Section Two</button></li>
+						<li><button>Section Two</button></li>
 					</ul>
 				</nav>
 			</div>
@@ -55,28 +47,26 @@ const Navigation = ({navAnimation, setNavAnimation, windowWidth, windowHeight}) 
 				</div> */}
 				<div className='bottom-nav'>
 					{
-						thumbs.map((item, index) => {
+						images.map((item, index) => {
 							const{imagePath, linkPath, transitionTiming} = item;
 							return(
 								<div key={index}>
 									
-                                    <motion.div 
-                                            className='box'
-                                            onClick={()=>{linkPath}}
-                                            initial={{opacity:0, translateY:25}}
-                                            animate={{opacity:1, translateY:0}}
-                                            transition={{duration:1, delay:transitionTiming}}  
-                                           
-                                        >
-                                            <motion.div
-                                             whileHover={{ scale: 1.2,transition: { duration: .2 },}}
-                                            >
-                                                <img src={imagePath} alt="Thumbs" />
-                                            </motion.div>
-                                        </motion.div>
-										
-										
-									
+									<motion.div 
+											className='box'
+											onClick={()=>{linkPath}}
+											initial={{opacity:0, translateY:25}}
+											animate={{opacity:1, translateY:0}}
+											transition={{duration:1, delay:transitionTiming}}  
+										   
+										>
+											<motion.div
+											 whileHover={{ scale: 1.2,transition: { duration: .2 },}}
+											>
+												<img src={imagePath} alt="Thumbs" />
+											</motion.div>
+										</motion.div>
+
 								</div>    
 							)
 						})
@@ -84,8 +74,7 @@ const Navigation = ({navAnimation, setNavAnimation, windowWidth, windowHeight}) 
 				</div>
 			</div>
 			)}
-		</NavStyled>
-		
+		</NavStyled>		
 	)
 }
 

@@ -75,7 +75,7 @@ section{
 }
 
 .btn {
-    font-weight:700; display:inline-block;z-index:1; font-size:24px; border-radius:25px; padding:10px 25px; border:1px solid #fff; background:none; color:#fff; text-transform:uppercase; cursor: pointer; transition:all ease .2s;
+    font-weight:700; display:inline-block;z-index:1; font-size:24px; border-radius:25px; padding:10px 25px; border:1px solid #fff; background:none; color:#fff; text-transform:uppercase; cursor: pointer; transition:all ease .2s; text-decoration:none;
     @media (max-width:${MediaQueries.xLargeDevices}) {
         font-size:18px;
     }

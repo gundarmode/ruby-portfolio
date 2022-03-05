@@ -1,5 +1,6 @@
 import React, {useEffect, useRef} from 'react'
 import { StyledHeader } from './../styles/Header.styled'
+import Link from 'next/link'
 
 const Header = ({windowWidth, windowHeight}) => {
 
@@ -50,7 +51,7 @@ const Header = ({windowWidth, windowHeight}) => {
             </div>
             <div className="cool-text" ref={coolTextRef}>Rubyann Yau</div>
 
-            <button ref={btnRef}>View Portfolio</button>     
+            <Link href="/section-one"><a className='btn' ref={btnRef}>View Portfolio</a></Link>  
         </StyledHeader>
 	)
 }

@@ -59,25 +59,25 @@ const Navigation = ({navAnimation, setNavAnimation, windowWidth, windowHeight}) 
 	// 		default : break;
 	// 	}
 	// }
-
-	// useEffect(() => {
-	// 	setDisplay(location !== "/" ? true : false)
-	// 	switch (location) {
-	// 		// case "/" : 
-	// 		// setNavAnimation(false)
-	// 		// break;
-	// 		case "/section-one": 
-	// 			setCount(1)
-	// 			setNavAnimation(false)
-	// 		break;
-	// 		case "/section-two":
-	// 			setCount(2)
-	// 			setNavAnimation(false)
-	// 		break;
-	// 		default:
-	// 		break;
-	// 	}
-	// }, [location, setNavAnimation])
+    console.log(window.location.href)
+	useEffect(() => {
+		setDisplay(window.location.href !== "/" ? true : false)
+		// switch (location) {
+		// 	// case "/" : 
+		// 	// setNavAnimation(false)
+		// 	// break;
+		// 	case "/section-one": 
+		// 		setCount(1)
+		// 		setNavAnimation(false)
+		// 	break;
+		// 	case "/section-two":
+		// 		setCount(2)
+		// 		setNavAnimation(false)
+		// 	break;
+		// 	default:
+		// 	break;
+		// }
+	}, [])
 
 	return (
 				
