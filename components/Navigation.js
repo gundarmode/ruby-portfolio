@@ -60,7 +60,6 @@ const Navigation = ({navAnimation, setNavAnimation, windowWidth, windowHeight, d
 												>
 													<img src={imagePath} alt="Thumbs" />
 												</motion.div>`
-	
 											</motion.div>
 										</Link>
 									</div>    

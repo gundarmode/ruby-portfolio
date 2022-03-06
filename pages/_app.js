@@ -41,10 +41,10 @@ function MyApp({ Component, pageProps }) {
 	}, [router])
     
     return (
-        <ThemeProvider theme={lightTheme}>
+        <ThemeProvider theme={lightTheme} key={router.asPath}>
             <GlobalStyles />
-            <Navigation navAnimation={navAnimation} setNavAnimation={setNavAnimation} windowWidth={size.windowWidth} windowHeight={size.windowHeight} display={display} key={router.asPath}/>
-            <Component windowWidth={size.windowWidth} windowHeight={size.windowHeight} {...pageProps}  />
+            <Navigation navAnimation={navAnimation} setNavAnimation={setNavAnimation} windowWidth={size.windowWidth} windowHeight={size.windowHeight} display={display} />
+            <Component windowWidth={size.windowWidth} windowHeight={size.windowHeight} {...pageProps} router={router}  />
         </ThemeProvider>
     )
  
