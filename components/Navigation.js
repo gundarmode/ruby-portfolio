@@ -34,41 +34,41 @@ const Navigation = ({navAnimation, setNavAnimation, windowWidth, windowHeight, d
 				<nav className={`nav${navButton ? " active" : ""}`} style={{width:`${windowWidth}px`, minHeight:`${windowHeight}px`}}>
 					<div className='menu-title'>Menu</div>
 					<ul>
-						<li><button><Link href="/section-one">Section One</Link></button></li>
-						<li><button>Section Two</button></li>
+						<li><button><Link href="/section-one">Jennie Kim - Transcription</Link></button></li>
+						<li><button><Link href="/section-two">Jennie Kim - Transcription</Link></button></li>
 					</ul>
 				</nav>
 			</div>
 			{display && (
-			<div>
-				<div className='bottom-nav'>
-					{
-						images.map((item, index) => {
-							const{imagePath, linkPath, transitionTiming} = item;
-							return(
-								<div key={index}>
-									
-									<motion.div 
-											className='box'
-											onClick={()=>{linkPath}}
-											initial={{opacity:0, translateY:25}}
-											animate={{opacity:1, translateY:0}}
-											transition={{duration:1, delay:transitionTiming}}  
-										   
-										>
-											<motion.div
-											 whileHover={{ scale: 1.2,transition: { duration: .2 },}}
+				<div>
+					<div className='bottom-nav'>
+						{
+							images.map((item, index) => {
+								const{imagePath, linkPath, transitionTiming} = item;
+								return(
+									<div key={index}>
+										<Link href={linkPath}>
+											<motion.div 
+												className='box'
+												initial={{opacity:0, translateY:25}}
+												animate={{opacity:1, translateY:0}}
+												transition={{duration:1, delay:transitionTiming}}     
 											>
-												<img src={imagePath} alt="Thumbs" />
+												
+												<motion.div 
+													whileHover={{ scale: 1.2,transition: { duration: .2 },}}
+												>
+													<img src={imagePath} alt="Thumbs" />
+												</motion.div>`
+	
 											</motion.div>
-										</motion.div>
-
-								</div>    
-							)
-						})
-					}
+										</Link>
+									</div>    
+								)
+							})
+						}
+					</div>
 				</div>
-			</div>
 			)}
 		</NavStyled>		
 	)

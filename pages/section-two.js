@@ -1,17 +1,10 @@
-import React, {} from 'react'
+import React, {useState, useEffect} from 'react'
 import {motion} from "framer-motion"
-import { StyledSection } from '../components/styles/Section.styled'
+import { StyledSection } from './../styles/Section.styled'
 
-
-import img1 from "../components/assets/images/work/2/1.jpg"
-import img3 from "../components/assets/images/work/2/2.jpg"
-import img4 from "../components/assets/images/work/2/3.jpg"
-
-import bg from "../components/assets/images/work/2/bg.png"
 
 const SectionTwo = () => {
-   
- 
+
 	return (
 		<motion.section
             className="alt"
@@ -28,7 +21,7 @@ const SectionTwo = () => {
                                     animate={{opacity:1, translateY:0}}
                                     transition={{duration:1, delay:.25}}    
                                 >
-                                    <img src={img1} alt="work 1" />
+                                     <img src="./../assets/images/work/2/1.jpg" alt="work 1" />
                                 </motion.div>
                             </div>
                             <div className="column right">
@@ -38,7 +31,7 @@ const SectionTwo = () => {
                                     animate={{opacity:1, translateY:0}}
                                     transition={{duration:1, delay:.75}}
                                 >
-                                    <img src={img3} alt="work 3" />
+                                     <img src="./../assets/images/work/2/2.jpg" alt="work 1" />
                                 </motion.div>
                 
                             </div>
@@ -50,7 +43,7 @@ const SectionTwo = () => {
                                     animate={{opacity:1, translateY:0}}
                                     transition={{duration:1, delay:1}}
                                 >
-                                    <img src={img4} alt="work 4" />
+                                     <img src="./../assets/images/work/2/3.jpg" alt="work 1" />
                                 </motion.div>
                         </div>
                     </div>

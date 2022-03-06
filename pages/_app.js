@@ -39,11 +39,6 @@ function MyApp({ Component, pageProps }) {
 
         
 	}, [router])
-
-    
-    console.log(router)
-    console.log(display)
-    
     
     return (
         <ThemeProvider theme={lightTheme}>

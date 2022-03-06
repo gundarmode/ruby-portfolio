@@ -52,6 +52,12 @@ export const NavStyled = styled.div `
         button {
             background:none; border:none; cursor: pointer; color:#fff; font-size:24px; font-weight:700;
         }
+        a {
+            text-decoration:none; color:#fff;
+            &:hover {
+                color:#f5b800;
+            }
+        }
     }
 
     .side-buttons{
