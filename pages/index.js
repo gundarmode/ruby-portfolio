@@ -3,10 +3,7 @@ import Image from 'next/image'
 import {useState, useEffect} from "react";
 import Header from '../components/Header';
 
-export default function Home({windowWidth, windowHeight, router}) {
-
-    
-
+export default function Home({windowWidth, windowHeight, router, display, animationEffectTimed}) {
 
   return (
     <>
@@ -18,7 +15,7 @@ export default function Home({windowWidth, windowHeight, router}) {
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800&display=swap" rel="stylesheet"/>
       </Head>
      
-      <Header windowWidth={windowWidth} windowHeight={windowHeight} router={router} />
+      <Header windowWidth={windowWidth} windowHeight={windowHeight} router={router} display={display} animationEffectTimed={animationEffectTimed} />
     </>
   )
 }

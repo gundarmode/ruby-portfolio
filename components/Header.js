@@ -1,57 +1,54 @@
-import React, {useEffect, useRef} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import { StyledHeader } from './../styles/Header.styled'
 import Link from 'next/link'
 import {motion} from "framer-motion"
 
-const Header = ({windowWidth, windowHeight}) => {
-
+const Header = ({windowWidth, windowHeight, router}) => {
 
 	const headerRef = useRef(null)
-	const titleRef = useRef(null)
-	const subTitleRef = useRef(null)
-	const coolTextRef = useRef(null)
-	const header1Ref = useRef(null)
-	const header2Ref = useRef(null)
-	const header3Ref = useRef(null)
-	const btnRef = useRef(null)
-	
+	const headerElem1Ref = useRef(null)	
+	const headerElem2Ref = useRef(null)	
+	const headerElem3Ref = useRef(null)	
+
+	let headerTimer, headerElem1Timer, headerElem2Timer, headerElem3Timer
+
 	const timer = (el, time) => {
-		setTimeout(() => {el.current.classList.add("active")}, time);
+		return setTimeout(() => {el.current.classList.add("active")}, time);
 	}
- 
+
 	useEffect(() => {
-		timer(coolTextRef, 500)	
-	   	timer(headerRef, 750)
-		// timer(header1Ref, 1000)
-		// timer(header2Ref, 1250)
-		// timer(header3Ref, 1500)
-		timer(titleRef, 1750)
-		// timer(subTitleRef, 2000) 
-		timer(btnRef, 2500)
-		
-		// setTimeout(() => {
-		//     setInterval(() => {
-		//         extraBG.current.classList.toggle("bg-transition")
-		//     }, 4000);
-		// }, 2500);
-		
-	},[])
+		// add header background animation using css
+		if(router.pathname === "/") {
+			headerTimer = timer(headerRef, 750)
+			headerElem1Timer = timer(headerElem1Ref, 1000)
+			headerElem2Timer = timer(headerElem2Ref, 1250)
+			headerElem3Timer = timer(headerElem3Ref, 1500)
+		}
+
+		// clear setTimeout when Header component unmounts
+		return () => {
+			clearTimeout(headerTimer)
+			clearTimeout(headerElem1Timer)
+			clearTimeout(headerElem2Timer)
+			clearTimeout(headerElem3Timer)
+		}
+	}, [])
 
 	return (
 		<StyledHeader ref={headerRef} style={{width:`${windowWidth}px`, height:`${windowHeight}px`}}>
 			<div className='extra-bg'></div>
 			<div className="header-elements">
-				<motion.div className="header-element element-1" initial={{translateY:2000}} animate={{translateY:0}} transition={{duration:.2, delay:1}} />
-				<motion.div className="header-element element-2" initial={{translateY:-2000}} animate={{translateY:0}} transition={{duration:.2, delay:1.25}} />
-				<motion.div className="header-element element-3" initial={{translateY:2000}} animate={{translateY:0}} transition={{duration:.2, delay:1.5}} />
+				<div className="header-element element-1" ref={headerElem1Ref}/>
+				<div className="header-element element-2" ref={headerElem2Ref}/>
+				<div className="header-element element-3" ref={headerElem3Ref}/>
 			</div>
-			<div className="intro-box slide" ref={titleRef}>
+			<motion.div className="intro-box slide" initial={{translateY:50, opacity:0}} animate={{translateY:0, opacity:1}} transition={{duration:.2, delay:1.75}}>
 				<h1>Rubyann Yau</h1>
 				<div className="sub-title">Graphic Designer</div>
-			</div>
-			<div className="cool-text" ref={coolTextRef}>Rubyann Yau</div>
+			</motion.div>
+			{/* <div className="cool-text" ref={coolTextRef}>Rubyann Yau</div> */}
 
-			<Link href="/section-one"><a className='btn' ref={btnRef}>View Portfolio</a></Link>  
+			<Link href="/section-one"><motion.a className='btn' initial={{translateY:50, translateX:`${-50}%`, opacity:0}} animate={{translateY:0,  translateX:`${-50}%`, opacity:1}} transition={{duration:.2, delay:2}}>View Portfolio</motion.a></Link>
 		</StyledHeader>
 	)
 }

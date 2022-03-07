@@ -60,7 +60,7 @@ export const StyledHeader = styled.header`
 			background-image:url("./../assets/images/header/elem-1-small.png");
 		}
         &.element-1 {
-            /* transform:translate(0%, 200%); */
+            transform:translate(0%, 200%);
 			@media (max-width:${MediaQueries.xLargeDevices}) {
 				transform:translate(200%,0%);
 			}
@@ -70,7 +70,7 @@ export const StyledHeader = styled.header`
         }
         &.element-2 {
             background-image:url("./../assets/images/header/elem-2.png");
-            /* transform:translate(0%, -200%); */
+            transform:translate(0%, -200%);
 			@media (max-width:${MediaQueries.xLargeDevices}) {
 				background-image:url("./../assets/images/header/elem-2-small.png");
 				transform:translate(-200%,0%);
@@ -81,7 +81,7 @@ export const StyledHeader = styled.header`
         }
         &.element-3 {
             background-image:url("./../assets/images/header/elem-3.png");
-			/* transform:translate(0%, 200%); */
+			transform:translate(0%, 200%);
 			@media (max-width:${MediaQueries.xLargeDevices}) {
 				background-image:url("./../assets/images/header/elem-3-small.png");
 				transform:translate(200%,0%);
@@ -92,9 +92,7 @@ export const StyledHeader = styled.header`
         }
     }
 	.btn {
-		position:absolute; bottom:50px; left:50%; transform:translateX(-50%); opacity:0;
-		&.active {
-			opacity:1;
-		}
+		position:absolute; bottom:50px; left:50%; transform:translateX(-50%);
+
 	}
 `

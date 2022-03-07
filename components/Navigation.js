@@ -24,8 +24,7 @@ const images = [
 const Navigation = ({navAnimation, setNavAnimation, windowWidth, windowHeight, display}) => {
 	const[navButton, setNavButton] = useState(false)
 
-	return (
-				
+	return (		
 		<NavStyled>
 			<div className={`main-nav${navAnimation ? " active" : ""}`}>
 				
@@ -54,7 +53,6 @@ const Navigation = ({navAnimation, setNavAnimation, windowWidth, windowHeight, d
 												animate={{opacity:1, translateY:0}}
 												transition={{duration:1, delay:transitionTiming}}     
 											>
-												
 												<motion.div 
 													whileHover={{ scale: 1.2,transition: { duration: .2 },}}
 												>
