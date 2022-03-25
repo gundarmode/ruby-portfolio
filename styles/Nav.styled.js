@@ -10,6 +10,12 @@ export const NavStyled = styled.div `
         .logo {
             img {
                 width:200px; cursor:pointer;
+                @media(max-width:${MediaQueries.mediumDevices}) {
+                    width:150px;
+                }
+                @media(max-width:${MediaQueries.smallDevices}) {
+                    width:100px;
+                }
             }
         }
         .nav-button{

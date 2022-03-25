@@ -7,6 +7,7 @@ let logo =  "../assets/images/layout/logo.svg"
 let logo2 = "../assets/images/layout/logo-white.svg"
 let img1 = "../assets/images/work/thumbs/2.jpg"
 let img2 = "../assets/images/work/thumbs/1.jpg"
+let img3 = "../assets/images/work/thumbs/3.jpg"
 
 const images = [
 	{
@@ -18,7 +19,12 @@ const images = [
 		imagePath:img2,
 		linkPath: "/section-two",
 		transitionTiming: 2.5
-	}	
+	},
+	{
+		imagePath:img3,
+		linkPath: "/section-three",
+		transitionTiming: 3
+	}		
 ]
 
 const Navigation = ({navAnimation, setNavAnimation, windowWidth, windowHeight, display}) => {
@@ -34,7 +40,8 @@ const Navigation = ({navAnimation, setNavAnimation, windowWidth, windowHeight, d
 					<div className='menu-title'>Menu</div>
 					<ul>
 						<li><button><Link href="/section-one">Jennie Kim - Transcription</Link></button></li>
-						<li><button><Link href="/section-two">Jennie Kim - Transcription</Link></button></li>
+						<li><button><Link href="/section-two">Chinese Opera Mixed Media</Link></button></li>
+						<li><button><Link href="/section-three">Digital Drawing</Link></button></li>
 					</ul>
 				</nav>
 			</div>
@@ -54,10 +61,10 @@ const Navigation = ({navAnimation, setNavAnimation, windowWidth, windowHeight, d
 												transition={{duration:1, delay:transitionTiming}}     
 											>
 												<motion.div 
-													whileHover={{ scale: 1.2,transition: { duration: .2 },}}
+													whileHover={{ scale: 1.2,transition: { duration: .2 }}}
 												>
 													<img src={imagePath} alt="Thumbs" />
-												</motion.div>`
+												</motion.div>
 											</motion.div>
 										</Link>
 									</div>    

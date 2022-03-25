@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react'
 import { StyledHeader } from './../styles/Header.styled'
+import {axios} from 'axios'
 import Link from 'next/link'
 import {motion} from "framer-motion"
 
@@ -50,6 +51,7 @@ const Header = ({windowWidth, windowHeight, router}) => {
 
 			<Link href="/section-one"><motion.a className='btn' initial={{translateY:50, translateX:`${-50}%`, opacity:0}} animate={{translateY:0,  translateX:`${-50}%`, opacity:1}} transition={{duration:.2, delay:2}}>View Portfolio</motion.a></Link>
 		</StyledHeader>
+
 	)
 }
 
